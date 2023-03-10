@@ -18,13 +18,13 @@
 
 ```sh
 # install it as a dependency
-$ npm i @web3.storage/car-block-validator
+$ npm i @web3-storage/car-block-validator
 ```
 
 ## Usage
 
 ```js
-import { validateBlock } from '@web3.storage/car-block-validator'
+import { validateBlock } from '@web3-storage/car-block-validator'
 
 // Read CAR file as wished
 // const inStream = fs.createReadStream(process.argv[2])

@@ -44,6 +44,6 @@ export async function validateBlock (block) {
   const bytesHash = await hasher.digest(block.bytes)
 
   if (!equals(bytesHash.digest, block.cid.multihash.digest)) {
-    throw new Error(`block with cid ${block.cid.toString()} does not have valid bytes`)
+    throw new Error(`CID hash does not match bytes`)
   }
 }

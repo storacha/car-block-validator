@@ -29,10 +29,7 @@ import { equals } from 'uint8arrays'
  */
 export async function validateBlock (block) {
   const hasher = getHasher(block.cid.multihash.code)
-  console.log('hasher', hasher, block.bytes)
   const bytesHash = await hasher.digest(block.bytes)
-
-  console.log('has', bytesHash)
 
   if (!equals(bytesHash.digest, block.cid.multihash.digest)) {
     throw new Error(`block with cid ${block.cid.toString()} does not have valid bytes`)

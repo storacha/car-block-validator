@@ -37,7 +37,7 @@ for (const [code, hasher] of hashMap) {
     const reader = await CarBlockIterator.fromIterable(out)
 
     for await (const block of reader) {
-      t.throwsAsync(() => validateBlock(block))
+      t.throwsAsync(async () => validateBlock(block))
     }
   })
 }

@@ -15,7 +15,7 @@ import {
   keccak512
 // @ts-expect-error types not well published
 } from '@multiformats/sha3'
-import { equals } from 'uint8arrays'
+import { equals } from 'multiformats/bytes'
 
 /**
  * @typedef {object} Block
@@ -23,6 +23,7 @@ import { equals } from 'uint8arrays'
  * @property {Uint8Array} bytes
  */
 
+/** @type {Map<number, import('multiformats/hashes/interface').MultihashHasher>} */
 export const hashMap = new Map(
   [
     sha256, sha512, murmur3128, murmur332, blake2b256, blake2s256,
@@ -35,15 +36,24 @@ export const hashMap = new Map(
  * Validates IPLD block bytes.
  * @param {Block} block
  */
-export async function validateBlock (block) {
+export function validateBlock (block) {
   const hasher = hashMap.get(block.cid.multihash.code)
   if (!hasher) {
     throw new Error(`multihash code ${block.cid.multihash.code} is not supported`)
   }
 
-  const bytesHash = await hasher.digest(block.bytes)
+  const result = hasher.digest(block.bytes)
 
-  if (!equals(bytesHash.digest, block.cid.multihash.digest)) {
-    throw new Error('CID hash does not match bytes')
+  /** @param {import('multiformats/hashes/interface').MultihashDigest} h */
+  const compareDigests = h => {
+    if (!equals(h.digest, block.cid.multihash.digest)) {
+      throw new Error('CID hash does not match bytes')
+    }
   }
+
+  if (result instanceof Promise) {
+    return result.then(compareDigests)
+  }
+
+  compareDigests(result)
 }

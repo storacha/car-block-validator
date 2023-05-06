@@ -15,7 +15,7 @@ import {
   keccak512
 // @ts-expect-error types not well published
 } from '@multiformats/sha3'
-import { equals } from 'multiformats/bytes'
+import { equals } from 'uint8arrays'
 
 /**
  * @typedef {object} Block

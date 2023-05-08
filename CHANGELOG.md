@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/web3-storage/car-block-validator/compare/v1.0.1...v1.1.0) (2023-05-06)
+
+
+### Features
+
+* make optionally async ([#6](https://github.com/web3-storage/car-block-validator/issues/6)) ([d2a8ce1](https://github.com/web3-storage/car-block-validator/commit/d2a8ce15d26bd4c2afdf22f835eecb6b8e72e152))
+
+
+### Bug Fixes
+
+* revert deps upgrades ([#8](https://github.com/web3-storage/car-block-validator/issues/8)) ([74c878e](https://github.com/web3-storage/car-block-validator/commit/74c878eba8a9de5ebebe6fa208fd9c55dfdbeda0))
+
 ## [1.0.1](https://github.com/web3-storage/car-block-validator/compare/v1.0.0...v1.0.1) (2023-03-10)
 
 

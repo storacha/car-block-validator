@@ -32,6 +32,21 @@ export const hashMap = new Map(
   ].map(hash => [hash.code, hash])
 )
 
+/** The multihash hasher is not supported by this library. */
+export class UnsupportedHashError extends Error {
+  /** @param {number} code */
+  constructor (code) {
+    super(`multihash code ${code} is not supported`)
+  }
+}
+
+/** The bytes did not hash to the same value as the passed multihash. */
+export class HashMismatchError extends Error {
+  constructor () {
+    super('CID hash does not match bytes')
+  }
+}
+
 /**
  * Validates IPLD block bytes.
  * @param {Block} block
@@ -39,7 +54,7 @@ export const hashMap = new Map(
 export function validateBlock (block) {
   const hasher = hashMap.get(block.cid.multihash.code)
   if (!hasher) {
-    throw new Error(`multihash code ${block.cid.multihash.code} is not supported`)
+    throw new UnsupportedHashError(block.cid.multihash.code)
   }
 
   const result = hasher.digest(block.bytes)
@@ -47,7 +62,7 @@ export function validateBlock (block) {
   /** @param {import('multiformats/hashes/interface').MultihashDigest} h */
   const compareDigests = h => {
     if (!equals(h.digest, block.cid.multihash.digest)) {
-      throw new Error('CID hash does not match bytes')
+      throw new HashMismatchError()
     }
   }
 

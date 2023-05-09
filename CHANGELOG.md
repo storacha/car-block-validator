@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/web3-storage/car-block-validator/compare/v1.1.0...v1.2.0) (2023-05-09)
+
+
+### Features
+
+* disambiguate errors ([#9](https://github.com/web3-storage/car-block-validator/issues/9)) ([0c984a6](https://github.com/web3-storage/car-block-validator/commit/0c984a6120f492b046dee21f7ccc298e4d8b1b39))
+
 ## [1.1.0](https://github.com/web3-storage/car-block-validator/compare/v1.0.1...v1.1.0) (2023-05-06)
 
 

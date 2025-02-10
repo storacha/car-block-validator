@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/storacha/car-block-validator/compare/v1.2.0...v1.2.1) (2025-02-10)
+
+
+### Bug Fixes
+
+* license identifier ([8239e7a](https://github.com/storacha/car-block-validator/commit/8239e7a173a4c656dcb342d4f7ea95bf475eb2a6))
+* upgrage deps to dedupe in ipfs-car ([#11](https://github.com/storacha/car-block-validator/issues/11)) ([ea080de](https://github.com/storacha/car-block-validator/commit/ea080debdd6c47306e1159c6616b7a109470cac3))
+
 ## [1.2.0](https://github.com/web3-storage/car-block-validator/compare/v1.1.0...v1.2.0) (2023-05-09)
 
 

@@ -29,7 +29,7 @@
   "dependencies": {
     "@multiformats/blake2": "^2.0.2",
     "@multiformats/murmur3": "^2.1.8",
-    "@multiformats/sha3": "^2.0.15",
+    "@multiformats/sha3": "^3.0.2",
     "multiformats": "^13.3.1",
     "uint8arrays": "^5.1.0"
   },

@@ -13,7 +13,6 @@ import {
   keccak256,
   keccak384,
   keccak512
-// @ts-expect-error types not well published
 } from '@multiformats/sha3'
 import { equals } from 'uint8arrays/equals'
 

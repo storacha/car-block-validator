@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/storacha/car-block-validator/compare/v1.2.1...v1.2.2) (2025-03-02)
+
+
+### Bug Fixes
+
+* upgrade @multiformats/sha3 to dedupe multiformats ([#13](https://github.com/storacha/car-block-validator/issues/13)) ([a2f2150](https://github.com/storacha/car-block-validator/commit/a2f215030ef1bff02fc77ae07ef1ee61e3b58386))
+
 ## [1.2.1](https://github.com/storacha/car-block-validator/compare/v1.2.0...v1.2.1) (2025-02-10)
 
 
